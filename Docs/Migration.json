@@ -1,0 +1,61 @@
+{
+  "sourceRepository": "sucRo-RimWorld/Ancient-Medieval-Japan-Agriculture",
+  "sourceCommit": "7a30b5d5e036534d9f08aa94efa96426343393c3",
+  "unchangedFiles": [
+    {
+      "source": "Assemblies/AMJAgriculture.Dining.dll",
+      "destination": "Assemblies/AMJAgriculture.Dining.dll",
+      "sha256": "7e22363f53fa8e596a794a153807e0937866ffd0bf8baefd0abeaefcd677525c"
+    },
+    {
+      "source": "Source/AMJAgriculture.Dining/Dining.cs",
+      "destination": "Source/AMJAgriculture.Dining/Dining.cs",
+      "sha256": "73618dbf18bd97c98c256ee3b0db8bc9ea3ac9893155c85405d0cf9a90692c4a"
+    },
+    {
+      "source": "Source/AMJAgriculture.Dining/AMJAgriculture.Dining.csproj",
+      "destination": "Source/AMJAgriculture.Dining/AMJAgriculture.Dining.csproj",
+      "sha256": "2bb8d4f7bb7eda13ae01312f7966621efce609e3ff2af91379b224830c3e69e2"
+    },
+    {
+      "source": "Languages/Japanese/DefInjected/JobDef/AMJA_Dining.xml",
+      "destination": "Languages/Japanese/DefInjected/JobDef/AMJA_Dining.xml",
+      "sha256": "051d15b4eefa5f363d28bd4357e207dedf6dbba0332c2f9545cfe032ed9a06c5"
+    },
+    {
+      "source": "Languages/Japanese/DefInjected/ThingDef/AMJA_MealPlate.xml",
+      "destination": "Languages/Japanese/DefInjected/ThingDef/AMJA_MealPlate.xml",
+      "sha256": "76c53264d2e097a8d1259b28a344bb33b6f42f4cb9b0737ab27b1a386a993897"
+    },
+    {
+      "source": "Textures/Things/Item/Meal/AMJC_MixedGrainMeal/AMJC_MixedGrainMeal_a.dds",
+      "destination": "Textures/Things/Item/AMJD/MealPlate/AMJC_MixedGrainMeal_a.dds",
+      "sha256": "6eb984e3822d3f2e01f7b310ebd788480225c4205243b158a1ddebf7beb988c3"
+    },
+    {
+      "source": "Textures/Things/Item/Meal/AMJC_MixedGrainMeal/AMJC_MixedGrainMeal_a.png",
+      "destination": "Textures/Things/Item/AMJD/MealPlate/AMJC_MixedGrainMeal_a.png",
+      "sha256": "6c2d5209cdda373c5367d6212328985e02722c85417690bfc266d148902f4985"
+    },
+    {
+      "source": "Textures/Things/Item/Meal/AMJC_MixedGrainMeal/AMJC_MixedGrainMeal_b.dds",
+      "destination": "Textures/Things/Item/AMJD/MealPlate/AMJC_MixedGrainMeal_b.dds",
+      "sha256": "6eb984e3822d3f2e01f7b310ebd788480225c4205243b158a1ddebf7beb988c3"
+    },
+    {
+      "source": "Textures/Things/Item/Meal/AMJC_MixedGrainMeal/AMJC_MixedGrainMeal_b.png",
+      "destination": "Textures/Things/Item/AMJD/MealPlate/AMJC_MixedGrainMeal_b.png",
+      "sha256": "6c2d5209cdda373c5367d6212328985e02722c85417690bfc266d148902f4985"
+    },
+    {
+      "source": "Textures/Things/Item/Meal/AMJC_MixedGrainMeal/AMJC_MixedGrainMeal_c.dds",
+      "destination": "Textures/Things/Item/AMJD/MealPlate/AMJC_MixedGrainMeal_c.dds",
+      "sha256": "6eb984e3822d3f2e01f7b310ebd788480225c4205243b158a1ddebf7beb988c3"
+    },
+    {
+      "source": "Textures/Things/Item/Meal/AMJC_MixedGrainMeal/AMJC_MixedGrainMeal_c.png",
+      "destination": "Textures/Things/Item/AMJD/MealPlate/AMJC_MixedGrainMeal_c.png",
+      "sha256": "6c2d5209cdda373c5367d6212328985e02722c85417690bfc266d148902f4985"
+    }
+  ]
+}

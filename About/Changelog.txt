@@ -1,0 +1,3 @@
+0.1.0 - Dining owner extraction / 献立・配膳機能の移管
+- Moves existing AMJ meal assembly, serving, ingestion and compatibility into independent Dining. Culture and Agriculture are not dependencies. Daily Menu and Harmony remain required.
+- Agricultureの既存一膳化・配膳・喫食・互換処理を独立Diningへ移管。Culture本体・Agricultureは不要。Daily Menu・Harmony依存は維持。

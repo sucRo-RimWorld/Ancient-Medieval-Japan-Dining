@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="MealBase">
+    <defName>AMJA_MealPlate</defName><label>meal tray</label>
+    <description>A serving of cooked staple food with the available soup and side dish. The food retains its ingredients and storage condition.</description>
+    <tickerType>Normal</tickerType><stackLimit>1</stackLimit><tradeability>None</tradeability>
+    <graphicData><texPath>Things/Item/AMJD/MealPlate</texPath><graphicClass>Graphic_StackCount</graphicClass></graphicData>
+    <statBases><Nutrition>0.9</Nutrition><MarketValue>0</MarketValue><Mass>0.5</Mass></statBases>
+    <ingestible><preferability>MealSimple</preferability><ingestEffect>EatVegetarian</ingestEffect><ingestSound>Meal_Eat</ingestSound></ingestible>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable"/><li Class="CompProperties_Ingredients"/>
+      <li Class="CompProperties_Rottable"><daysToRotStart>4</daysToRotStart><rotDestroys>true</rotDestroys></li>
+      <li Class="AMJAgriculture.Dining.PlateProperties"/>
+    </comps>
+  </ThingDef>
+  <JobDef><defName>AMJA_TakeMeal</defName><driverClass>AMJAgriculture.Dining.TakeMealJob</driverClass><reportString>Serving a meal.</reportString><casualInterruptible>true</casualInterruptible></JobDef>
+</Defs>
