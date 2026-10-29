@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Ordinary wood construction mass: 40/60 units at 0.4 mass per unit. -->
+  <Operation Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DailyMenu_Buffet"]/statBases[not(Mass)]</xpath><value><Mass>16</Mass></value></Operation>
+  <Operation Class="PatchOperationAdd"><xpath>Defs/ThingDef[defName="DailyMenu_DrinkTable"]/statBases[not(Mass)]</xpath><value><Mass>24</Mass></value></Operation>
+</Patch>

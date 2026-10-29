@@ -1,0 +1,58 @@
+{
+  "exit_code": 0,
+  "version": "RimWorld 1.6.4871 rev600",
+  "production_dll_sha256": "7e22363f53fa8e596a794a153807e0937866ffd0bf8baefd0abeaefcd677525c",
+  "daily_unchanged": true,
+  "markers": [
+    "<color=#A5C2A5>[2026-10-29 15:16:19.610] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK real map and production assemblies loaded {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:19.658] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK real Agriculture cooking Bill offered {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:24.582] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK real DoBill creates Agriculture cooked grains {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:24.585] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK cooking produced four real meals {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:24.595] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK real dish accepted AMJC_MixedGrainMeal {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:24.599] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK real dish accepted DankPyon_MealMushroomSoup {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:24.601] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK real dish accepted DankPyon_MealGrilledSkewers {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:24.624] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK normal hunger AI chooses production three-role meal {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:26.366] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK normal take-and-eat job consumes three real dishes {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:26.367] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK normal meal restores hunger {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:26.368] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK one meal records each real dish once {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:26.368] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK MO soup effect survives plate ingestion {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:26.370] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_NATIVE_EAT_PASS {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:26.591] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK interruption fixture has taken actual food {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:26.593] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK interrupted take job drops retained food without deleting it {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:26.593] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK partial meal leaves its remainder {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:26.594] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK partial eating conserves nutrition {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:26.634] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK plate deep save/load retains food and nutrition {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:26.637] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_INTERRUPTION_SAVE_PASS {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:27.615] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK recovered saved plate can be eaten normally {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:27.926] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK patient qualifies for native assisted feeding {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:27.928] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK native nurse selects Agriculture meal job {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:28.925] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK nurse collects and feeds one Agriculture plate {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:28.926] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK patient meal records three original dishes once {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:28.926] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_PROXY_PASS {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:28.940] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK staple-only shortage meal remains available {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:28.941] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_CHECK generic simple-meal Bills are retired without deleting saved Defs {mod_id=amj.dining.acceptance}",
+    "<color=#A5C2A5>[2026-10-29 15:16:28.941] [INFO] [Mod.amj.dining.acceptance] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AGRI_DINING_PRODUCTION_PASS {mod_id=amj.dining.acceptance}"
+  ],
+  "errors": [
+    "Error: Cannot create FMOD::Sound instance for clip \"\" (FMOD error: Unsupported file or audio format. )",
+    "Error: Cannot create FMOD::Sound instance for clip \"\" (FMOD error: Unsupported file or audio format. )",
+    "<color=#80A6D9>[2026-10-29 15:15:24.604] [ERROR] [Unity] </color>Error: Cannot create FMOD::Sound instance for clip \"\" (FMOD error: Unsupported file or audio format. )",
+    "<color=#80A6D9>[2026-10-29 15:15:24.734] [ERROR] [Unity] </color>Error: Cannot create FMOD::Sound instance for clip \"\" (FMOD error: Unsupported file or audio format. )"
+  ],
+  "pickle": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "exitReason": "passed",
+    "scenarios": [
+      {
+        "name": "Real Agriculture meals and MO dishes",
+        "outcome": "Passed",
+        "durationMs": 15608,
+        "attempts": 1
+      }
+    ]
+  }
+}

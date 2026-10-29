@@ -1,0 +1,62 @@
+{
+  "exit_code": 0,
+  "game_version_file": "1.6.4871 rev598",
+  "game_version_log": "RimWorld 1.6.4871 rev600",
+  "daily_dll_sha256": "8f6f1ad5a576cab9cb0083921b8b7c0d684914edda1e3da7c229a34b561337e7",
+  "vendor_copy_unchanged": false,
+  "markers": [
+    "<color=#A5C2A5>[2026-10-28 11:18:36.672] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK native map loaded {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:36.698] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK buffet accepts MealSimple {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:36.699] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK buffet accepts MealFine {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:36.699] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK buffet accepts MealLavish {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:36.708] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK automatic selection chooses three different dishes {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.504] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK three dishes consumed by actual pawn jobs {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.504] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK baseline carries three separate portions rather than one plate {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.505] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK three dishes share one dining session {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.505] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK buffet deduction matches recorded consumed nutrition {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.506] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK native ingestion satisfies hunger {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.506] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK multi-dish dining mood applied {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.506] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_RESULT nutrition=0.8000001 removed=0.7999992 portions=3 elapsedTicks=1929 {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.514] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK one available dish still offers a meal job {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.514] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK fractional serving retains requested nutrition {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.515] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK portion retains ingredient identity {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.515] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK portion retains existing rot progress {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.515] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_BASELINE_PASS {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.559] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK prototype loads dish MealLavish {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.560] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK prototype loads dish MealFine {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.560] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK prototype loads dish MealSimple {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.561] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK prototype loads dish MealFine {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.566] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK role patch selects one of each role despite duplicate dish {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:41.566] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK staple role is selected first {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:42.430] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_PLATE_ASSEMBLED dishes=3 {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:43.940] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK single assembled plate consumed through one native Ingest job {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:43.940] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK plate forwards original three food ingestion effects once each {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:43.940] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK pawn carries one assembled plate {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:43.941] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK wrapper does not duplicate Daily Menu consumption records {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:43.941] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK plate preserves nutrition accounting {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:43.941] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_CHECK one-plate native job satisfies hunger {mod_id=amj.daily.probe}",
+    "<color=#A5C2A5>[2026-10-28 11:18:43.942] [INFO] [Mod.amj.daily.probe] [home/runner/work/Rimworld-Pickle/Rimworld-Pickle/Source/Pickle/Runtime/PickleDriver:243] </color>AMJ_DAILY_PLATE_PROTOTYPE_PASS {mod_id=amj.daily.probe}"
+  ],
+  "errors": [],
+  "pickle": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "exitReason": "passed",
+    "scenarios": [
+      {
+        "name": "Existing multi-dish food flow",
+        "outcome": "Passed",
+        "durationMs": 13374,
+        "attempts": 1
+      }
+    ]
+  },
+  "provider_changes": [
+    "Assemblies/DailyMenu.Supply.dll"
+  ],
+  "repaired_supply_sha256": "33444460eb8f9861f2b90261228e94d8469d7c1c2380a587258a402db28d09ed",
+  "probe_sha256": "4164ac1d146c16ecdb9580100903d0fdd2c9c7f66350ed1fdcf4dbc8724b7548"
+}
