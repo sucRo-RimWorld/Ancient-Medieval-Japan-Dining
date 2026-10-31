@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Save identifier only; the implementation and artwork are AMJ/vanilla-owned. -->
+  <ThingDef ParentName="AMJD_ServingTableBase">
+    <defName>DailyMenu_Buffet</defName><thingClass>DailyMenu.Buffet</thingClass>
+    <designationCategory IsNull="True" />
+  </ThingDef>
+</Defs>

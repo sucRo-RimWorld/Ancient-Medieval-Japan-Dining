@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Name="AMJD_ServingTableBase" ParentName="StorageShelfBase" Abstract="True">
+    <label>serving table</label>
+    <description>A shelf for one selected cooked dish. Haulers replenish it; diners take portions for their meal trays. Choose the dish using the table's command.</description>
+    <thingClass>AMJAgriculture.Dining.ServingTable</thingClass>
+    <tickerType>Normal</tickerType>
+    <size>(1,1)</size><costStuffCount>40</costStuffCount>
+    <graphicData><texPath>Things/Building/Furniture/ShelfSmall</texPath><graphicClass>Graphic_Multi</graphicClass><drawSize>(2,2)</drawSize></graphicData>
+    <statBases><WorkToBuild>1200</WorkToBuild><MaxHitPoints>150</MaxHitPoints><Mass>16</Mass></statBases>
+    <building>
+      <storageGroupTag>AMJD_ServingTable</storageGroupTag>
+      <maxItemsInCell>3</maxItemsInCell>
+      <defaultStorageSettings Inherit="False"><priority>Critical</priority><filter /></defaultStorageSettings>
+      <fixedStorageSettings Inherit="False"><filter><categories><li>FoodMeals</li></categories></filter></fixedStorageSettings>
+    </building>
+  </ThingDef>
+  <ThingDef ParentName="AMJD_ServingTableBase"><defName>AMJD_ServingTable</defName></ThingDef>
+</Defs>

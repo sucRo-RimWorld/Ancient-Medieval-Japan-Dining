@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Existing provisional effects retained while replacing the provider, not new balance approval. -->
+  <ThoughtDef>
+    <defName>AMJD_VariedMeal</defName><thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>0.5</durationDays><stackLimit>1</stackLimit>
+    <stages>
+      <li><label>varied meal</label><description>I enjoyed two different dishes in my meal.</description><baseMoodEffect>2</baseMoodEffect></li>
+      <li><label>well-rounded meal</label><description>I enjoyed three different dishes in my meal.</description><baseMoodEffect>4</baseMoodEffect></li>
+    </stages>
+  </ThoughtDef>
+</Defs>

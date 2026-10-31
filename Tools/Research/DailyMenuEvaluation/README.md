@@ -1,3 +1,5 @@
+2026-10-31: HISTORICAL PROVIDER-DEPENDENT PROBES. For current Dining use Tools/Acceptance/RunIndependent.py. The scripts and results below require their original source/provider snapshots and do not validate the independent version.
+
 2026-10-30: Current owner is Dining. RunProduction.py expects input/Agriculture, input/Dining and input/DailyMenu; it loads the separated packages. It is manual-only; the separated run is documented in Docs/ExtractionValidation.md. The other probes and result files below are historical.
 
 # Daily Menu feasibility evidence

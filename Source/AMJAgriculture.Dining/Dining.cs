@@ -2,9 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
-using DailyMenu;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -25,79 +22,18 @@ namespace AMJAgriculture.Dining
         }
     }
 
-    // The supplied 0.3.7 DLL calls a helper "Prepare", a reserved Harmony
-    // callback. Bypass ONLY its startup class, installing its actual patches
-    // individually without ever treating that helper as a prepare callback.
-    [HarmonyPatch(typeof(StaticConstructorOnStartupUtility), "CallAll")]
-    internal static class SupplyCompatibility
-    {
-        private static bool installed;
-        private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            MethodInfo original = AccessTools.Method(typeof(RuntimeHelpers), "RunClassConstructor", new[] { typeof(RuntimeTypeHandle) });
-            MethodInfo replacement = AccessTools.Method(typeof(SupplyCompatibility), "RunConstructor");
-            foreach (CodeInstruction instruction in instructions)
-            {
-                if (instruction.Calls(original)) { instruction.opcode = OpCodes.Call; instruction.operand = replacement; }
-                yield return instruction;
-            }
-        }
-        private static void RunConstructor(RuntimeTypeHandle handle)
-        {
-            Type type = Type.GetTypeFromHandle(handle);
-            if (type.FullName != "DailyMenuSupply.Startup") { RuntimeHelpers.RunClassConstructor(handle); return; }
-            Type bad = type.Assembly.GetType("DailyMenuSupply.ProcessingSupply");
-            MethodInfo helper = bad == null ? null : AccessTools.DeclaredMethod(bad, "Prepare");
-            if (helper == null) { RuntimeHelpers.RunClassConstructor(handle); return; }
-            if (installed) return;
-            foreach (Type patch in type.Assembly.GetTypes().Where(t => t.IsDefined(typeof(HarmonyPatch), false)))
-            {
-                if (patch == bad || patch.FullName == "DailyMenuSupply.StandardDrinkSupply")
-                    DiningMod.Patches.Patch(patch == bad ? AccessTools.Method(typeof(Processing), "Plan") : AccessTools.Method(typeof(Planner), "PlanDrugs"),
-                        prefix: new HarmonyMethod(AccessTools.DeclaredMethod(patch, "Prefix")));
-                else DiningMod.Patches.CreateClassProcessor(patch).Patch();
-            }
-            installed = true;
-            Log.Message("[AMJ Agriculture] Daily Menu Supply compatibility applied; provider files unchanged.");
-        }
-    }
-
-    // Author-approved acceptance-only exception. Do not mutate the live Def or
-    // copy Cheat Menu's per-item stat offsets during portion splitting.
-    [HarmonyPatch(typeof(FoodState), "Unsupported")]
-    internal static class CheatMenuAcceptance
-    {
-        private static readonly MethodInfo Clone = typeof(object).GetMethod(
-            "MemberwiseClone", BindingFlags.Instance | BindingFlags.NonPublic);
-
-        private static void Prefix(ref ThingDef __0)
-        {
-            if (__0 == null || __0.comps == null || !__0.comps.Exists(IsCheatOffsets)) return;
-            ThingDef copy = (ThingDef)Clone.Invoke(__0, null);
-            copy.comps = new List<CompProperties>(__0.comps);
-            copy.comps.RemoveAll(IsCheatOffsets);
-            __0 = copy;
-        }
-
-        private static bool IsCheatOffsets(CompProperties props)
-        {
-            return props != null && props.compClass != null &&
-                props.compClass.FullName == "Cheat_Menu.CompCheatStatOffsets";
-        }
-    }
-
     public static class Meals
     {
         public static MealRole Role(ThingDef def)
         { var extension = def == null ? null : def.GetModExtension<MealRoleExtension>(); return extension == null ? MealRole.None : extension.role; }
-        public static List<Buffet> Select(Pawn worker, Pawn eater)
+        public static List<ServingTable> Select(Pawn worker, Pawn eater)
         {
-            var choices = eater.Map.GetComponent<MenuMap>().Buffets
-                .Where(b => b.Sample(eater) != null && Role(b.selectedFood) != MealRole.None &&
+            var choices = eater.Map.listerBuildings.allBuildingsColonist.OfType<ServingTable>()
+                .Where(b => b.Sample(eater, worker) != null && Role(b.selectedFood) != MealRole.None &&
                     !b.IsForbidden(worker) && worker.CanReserveAndReach(b, PathEndMode.Touch, Danger.Deadly))
                 .GroupBy(b => Role(b.selectedFood)).OrderBy(g => g.Key)
                 .Select(g => g.OrderBy(b => b.Position.DistanceToSquared(worker.Position)).First()).ToList();
-            return choices.Any(b => Role(b.selectedFood) == MealRole.Staple) ? choices : new List<Buffet>();
+            return choices.Any(b => Role(b.selectedFood) == MealRole.Staple) ? choices : new List<ServingTable>();
         }
         public static Job MakeJob(Pawn worker, Pawn eater)
         {
@@ -113,27 +49,46 @@ namespace AMJAgriculture.Dining
     internal static class ChooseMeal
     {
         [HarmonyPriority(Priority.Last)]
-        [HarmonyAfter("daily.menu.manager")]
         private static void Postfix(Pawn pawn, ref Job __result)
         {
             if (pawn.Map == null || !pawn.RaceProps.Humanlike || pawn.Downed || pawn.Drafted ||
                 pawn.needs.food == null || pawn.needs.food.CurCategory < HungerCategory.Hungry) return;
             if (__result != null && __result.def == JobDefOf.Ingest && __result.targetA.Thing != null &&
                 __result.targetA.Thing.TryGetComp<Plate>() != null) return;
-            if (__result != null && __result.def != JobDefOf.Ingest && __result.def.defName != "DailyMenu_TakeBuffet") return;
+            if (__result != null && __result.def != JobDefOf.Ingest) return;
             Job meal = Meals.MakeJob(pawn, pawn);
             if (meal != null) __result = meal;
         }
     }
 
-    [HarmonyPatch(typeof(ProxyNurse), "Make")]
+    // Replace only jobs already accepted by the vanilla doctor/warden work giver.
+    [HarmonyPatch]
     internal static class ProxyMeal
     {
-        private static void Postfix(Pawn worker, Pawn eater, ref Job __result)
+        private static IEnumerable<MethodBase> TargetMethods()
         {
-            if (__result == null) return; // retain upstream prisoner/medical eligibility
-            Job job = Meals.MakeJob(worker, eater);
-            if (job != null) __result = job;
+            yield return AccessTools.Method(typeof(WorkGiver_FeedPatient), "JobOnThing");
+            yield return AccessTools.Method(typeof(WorkGiver_Warden_Feed), "JobOnThing");
+        }
+        private static void Postfix(Pawn pawn, Thing t, ref Job __result)
+        {
+            if (__result == null || __result.def != JobDefOf.FeedPatient || !(t is Pawn eater) || !eater.RaceProps.Humanlike || eater.DevelopmentalStage.Baby()) return;
+            Job meal = Meals.MakeJob(pawn, eater);
+            if (meal != null) __result = meal;
+        }
+    }
+    [HarmonyPatch]
+    internal static class MealJobInfo
+    {
+        private static IEnumerable<MethodBase> TargetMethods()
+        {
+            yield return AccessTools.Method(typeof(WorkGiver_FeedPatient), "JobInfo");
+            yield return AccessTools.Method(typeof(WorkGiver_Warden_Feed), "JobInfo");
+        }
+        private static bool Prefix(Job job, ref string __result)
+        {
+            if (job.def.defName != "AMJA_TakeMeal") return true;
+            __result = ""; return false;
         }
     }
 
@@ -157,7 +112,7 @@ namespace AMJAgriculture.Dining
             SyncRot();
         }
         public bool SafeFor(Pawn eater)
-        { return contents.Count > 0 && contents.All(d => d.IngestibleNow && Rules.Allowed(eater, d)); }
+        { return contents.Count > 0 && contents.All(d => d.IngestibleNow && FoodPortions.Allowed(eater, d)); }
         private void SyncRot()
         {
             var rot = parent.TryGetComp<CompRottable>();
@@ -188,13 +143,8 @@ namespace AMJAgriculture.Dining
                 Thing eaten = original;
                 if (take < available - 0.0001f)
                 {
-                    eaten = ThingMaker.MakeThing(original.def);
-                    foreach (ThingComp comp in ((ThingWithComps)original).AllComps) comp.PostSplitOff(eaten);
-                    var ing = original.TryGetComp<CompIngredients>();
-                    if (ing != null) foreach (ThingDef ingredient in ing.ingredients) eaten.TryGetComp<CompIngredients>().RegisterIngredient(ingredient);
-                    var rot = original.TryGetComp<CompRottable>();
-                    if (rot != null) eaten.TryGetComp<CompRottable>().RotProgress = rot.RotProgress;
-                    float raw = original.TryGetComp<Portion>().amount;
+                    eaten = FoodPortions.Copy(original);
+                    float raw = FoodPortions.Raw(original);
                     eaten.TryGetComp<Portion>().amount = raw * take / available;
                     original.TryGetComp<Portion>().amount = raw - eaten.TryGetComp<Portion>().amount;
                     contents.TryAdd(eaten, false);
@@ -224,10 +174,6 @@ namespace AMJAgriculture.Dining
         private static bool Prefix(Thing __instance, Pawn ingester, float nutritionWanted, ref float __result)
         { Plate plate = __instance.TryGetComp<Plate>(); if (plate == null) return true; __result = plate.Eat(ingester, nutritionWanted); return false; }
     }
-    [HarmonyPatch(typeof(MealTracking), "Postfix")]
-    internal static class NoDoubleRecord
-    { private static bool Prefix(Thing __0) { return __0 == null || __0.TryGetComp<Plate>() == null; } }
-
     public sealed class TakeMealJob : JobDriver
     {
         private Thing plate;
@@ -259,7 +205,7 @@ namespace AMJAgriculture.Dining
             {
                 if (plate != null) return;
                 goal = Eater.needs.food.NutritionWanted;
-                totalWeight = targets.Sum(t => { var b = t.Thing as Buffet; return b != null && Meals.Role(b.selectedFood) == MealRole.Staple ? 3f : 1f; });
+                totalWeight = targets.Sum(t => { var b = t.Thing as ServingTable; return b != null && Meals.Role(b.selectedFood) == MealRole.Staple ? 3f : 1f; });
                 session = Eater.GetUniqueLoadID() + "_amj_" + job.loadID;
                 plate = ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("AMJA_MealPlate"));
                 pawn.inventory.innerContainer.TryAdd(plate, false);
@@ -272,7 +218,7 @@ namespace AMJAgriculture.Dining
                 yield return Toils_General.Wait(60);
                 yield return Toils_General.Do(() =>
                 {
-                    var buffet = job.targetA.Thing as Buffet;
+                    var buffet = job.targetA.Thing as ServingTable;
                     if (buffet == null || !buffet.Spawned || buffet.IsForbidden(pawn)) return;
                     Plate packed = plate.TryGetComp<Plate>();
                     MealRole role = Meals.Role(buffet.selectedFood);
@@ -280,11 +226,17 @@ namespace AMJAgriculture.Dining
                     float budget = Math.Min(goal, Eater.needs.food.NutritionWanted);
                     float used = packed.Dishes.Sum(d => FoodUtility.NutritionForEater(Eater, d));
                     if (budget - used <= 0.001f) return;
-                    Thing dish = buffet.Dispense(Eater, Math.Min(budget - used, goal * (role == MealRole.Staple ? 3f : 1f) / Math.Max(1f, totalWeight)));
-                    if (dish == null) return;
-                    dish.TryGetComp<Portion>().session = session;
-                    dish.TryGetComp<Portion>().goal = goal;
-                    packed.Add(dish);
+                    float remaining = Math.Min(budget - used, goal * (role == MealRole.Staple ? 3f : 1f) / Math.Max(1f, totalWeight));
+                    while (remaining > 0.001f)
+                    {
+                        Thing dish = buffet.Dispense(Eater, pawn, remaining);
+                        if (dish == null) break;
+                        float nutrition = FoodUtility.NutritionForEater(Eater, dish);
+                        dish.TryGetComp<Portion>().session = session;
+                        dish.TryGetComp<Portion>().goal = goal;
+                        packed.Add(dish);
+                        remaining -= nutrition;
+                    }
                 });
             }
             if (Eater != pawn)

@@ -1,7 +1,7 @@
 # Current handoff
 
-2026-10-30: Agriculture's existing dining source/DLL, tray/job Defs, translations, Daily Menu compatibility and evidence moved here. Culture category only; no Culture/Agriculture/MO hard dependency. Agriculture must adopt the paired extraction change before both are loaded. Daily Menu remains required.
+2026-10-31: Owner-approved Daily Menu dependency removal. Dining now owns serving-table storage, portions, meal records and doctor/warden meal substitution. Harmony only; Culture/Agriculture/MO are not Dining dependencies. Agriculture still owns food/role mapping.
 
-Owner: [Design](Design.md). Current behavior is unchanged; graphical role-layout UI, main/side/garnish separation, portion and variety redesign and Daily Menu independence remain future work. Numerical balance is not finalized. Historical game evidence is not separated-Mod acceptance.
+Current owner spec: [Design](Design.md). Graphical meal layout, main/side/garnish separation and numerical rebalance remain later work. The old source and DLL hashes in Migration.json are extraction history. Current acceptance runner: Tools/Acceptance/RunIndependent.py, with no Daily Menu package. Do not use historical provider-dependent probes as the current entry point.
 
-移管後のMO併用実ゲーム確認：[結果と前提](ExtractionValidation.md)。単独構成・実ユーザー旧セーブ・1.7は未検証。
+Current dependency-removal runtime evidence: [2026-10-31 acceptance](IndependentValidation.md).

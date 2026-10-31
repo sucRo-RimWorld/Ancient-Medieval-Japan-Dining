@@ -1,3 +1,7 @@
-0.1.0 - Dining owner extraction / 献立・配膳機能の移管
+0.1.0 - Independent serving / 独立した配膳
+- Removes Daily Menu dependency; owns serving tables, portions and meal records with vanilla hauling and assisted feeding. Harmony only.
+- Daily Menu依存を除去。独自の配膳台・小分け・品数記録を実装し、バニラ運搬・介助給餌を利用する。必須はHarmonyのみ。
+
+Earlier extraction history / 以下は移転当時の履歴：
 - Moves existing AMJ meal assembly, serving, ingestion and compatibility into independent Dining. Culture and Agriculture are not dependencies. Daily Menu and Harmony remain required.
 - Agricultureの既存一膳化・配膳・喫食・互換処理を独立Diningへ移管。Culture本体・Agricultureは不要。Daily Menu・Harmony依存は維持。

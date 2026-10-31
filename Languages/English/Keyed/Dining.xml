@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<AMJD_SelectFood>Choose dish</AMJD_SelectFood><AMJD_ClearFood>Stop serving</AMJD_ClearFood>
+<AMJD_SelectFoodDesc>Select one cooked dish for this table. Haulers replenish it using ordinary storage.</AMJD_SelectFoodDesc>
+<AMJD_SelectedFood>Dish: {0}</AMJD_SelectedFood><AMJD_StoredNutrition>Stored nutrition: {0}</AMJD_StoredNutrition>
+</LanguageData>
