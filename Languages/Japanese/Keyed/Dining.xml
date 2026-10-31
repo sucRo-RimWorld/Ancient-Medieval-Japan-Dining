@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<AMJD_SelectFood>料理を選ぶ</AMJD_SelectFood><AMJD_ClearFood>配膳を停止</AMJD_ClearFood>
+<AMJD_SelectFoodDesc>この台で供する料理を一種類選ぶ。運搬担当者が備蓄を補充する。</AMJD_SelectFoodDesc>
+<AMJD_SelectedFood>料理：{0}</AMJD_SelectedFood><AMJD_StoredNutrition>備蓄栄養：{0}</AMJD_StoredNutrition>
+</LanguageData>

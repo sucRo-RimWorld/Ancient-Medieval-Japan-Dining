@@ -6,12 +6,12 @@
   <supportedVersions><li>1.6</li></supportedVersions>
   <modDependencies>
     <li><packageId>brrainz.harmony</packageId><displayName>Harmony</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl></li>
-    <li><packageId>daily.menu.manager</packageId><displayName>Daily Menu</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/3812908178</steamWorkshopUrl></li>
   </modDependencies>
-  <loadAfter><li>brrainz.harmony</li><li>daily.menu.manager</li></loadAfter>
-  <description>Combines stored cooked dishes into one meal tray, retaining their ingredients, nutrition and storage condition. Includes portioning, interrupted serving, leftovers and assisted feeding. Food mods supply role assignments. Currently uses Daily Menu serving tables; the graphical meal-layout editor is planned, not implemented.
+  <loadAfter><li>brrainz.harmony</li></loadAfter>
+  <incompatibleWith><li>daily.menu.manager</li></incompatibleWith>
+  <description>Combines stored cooked dishes into one meal tray, retaining their ingredients, nutrition and storage condition. Includes portioning, interrupted serving, leftovers and assisted feeding. Food mods supply role assignments. Uses its own serving tables and vanilla hauling; the graphical meal-layout editor is planned, not implemented.
 
-備蓄した料理を取り分け、材料・栄養・保存状態を保った一膳にまとめる。配膳の中断、食べ残し、介助給餌に対応。料理の役割指定は食料Modが提供する。現時点ではDaily Menuの餐台を使用し、膳に料理画像を配置する編集UIは未実装。
+備蓄した料理を取り分け、材料・栄養・保存状態を保った一膳にまとめる。配膳の中断、食べ残し、介助給餌に対応。料理の役割指定は食料Modが提供する。独自の配膳台とバニラの運搬を使用する。膳に料理画像を配置する編集UIは未実装。
 
-Culture系カテゴリの独立Mod。Culture本体・Agriculture・Medieval Overhaulは必須ではない。HarmonyとDaily Menuが必要。単独では料理や役割指定済みの献立を追加しない。</description>
+Culture系カテゴリの独立Mod。Culture本体・Agriculture・Medieval Overhaulは必須ではない。Harmonyのみ必須。Daily Menuとの同時使用は非対応。単独では料理や役割指定済みの献立を追加しない。</description>
 </ModMetaData>

@@ -1,19 +1,25 @@
 # Ancient & Medieval Japan - Dining
 
-主食・主菜・副菜・汁物・漬物系の料理ロールを組み合わせ、一つの膳で食べる仕組みを目指す独立Modです。Culture系カテゴリですがCulture本体は不要です。
+主食・汁・副菜を備蓄から取り分け、一つの膳で食べる独立Modです。Culture系カテゴリですがCulture本体は不要です。
 
-## 現在使える機能
+RimWorld 1.6とHarmonyが必要です。**Daily Menuは不要で、同時使用は非対応です。** Agriculture・MOもDining自体の必須依存ではありません。料理と役割指定はAgricultureなどの食料Modが提供します。
 
-Agricultureから移した既存機能として、主食・汁・副菜の取り分け、一膳での喫食、残り物、中断、保存、介助給餌を提供します。料理と役割指定はAgricultureなどの食料Modが提供します。Dining単独では料理は追加しません。
+## 使い方
 
-RimWorld 1.6 / Harmony / Daily Menuが必要です。Agriculture・MO・CultureはDiningの必須依存ではありません。Agricultureと併用するときは両方を対応版へ更新し、Daily Menu → Dining → Agricultureの順で有効にしてください。旧Agricultureの配膳DLLを重複させないでください。
+1. 配膳台を建て、「料理を選ぶ」から供する料理を指定する。
+2. 通常の作業指示で料理を作り置きする。運搬担当者が配膳台へ補充する。
+3. 空腹時に主食と、用意できる汁・副菜を一膳にまとめて食べる。病人等への給餌にも接続する。
 
-膳に料理画像を配置するUI、主菜と副菜・添え物の独立枠、新しい品数・盛り付け判定は未実装です。Daily Menuからの独立もまだ行っていません。
+食べ残し、中断、材料・腐敗の引継ぎに対応します。朝昼晩の献立や自動調理計画は不要です。対応する主食がない場合は通常の食事経路を維持します。
 
-## Development
+膳に料理画像を置く編集UI、主菜・添え物の独立枠、盛り付けと品数の新しい評価は後続作業です。既存の暫定数値は最終バランスではありません。
 
-Dining owns meal assembly/serving/ingestion; food mods own recipes and role mappings. Culture is a category, not a dependency. The legacy assembly/type/Def identities are intentionally retained for references. No Daily Menu code or DLL is redistributed.
+## 更新と開発
 
-See [design and build/validation](Docs/Design.md) and [source-bounded historical evidence](Docs/Dining.md). This extraction is not a claim of new in-game or old-save acceptance. No Steam publication has occurred.
+Harmony → Dining → Agricultureの順で有効化してください。従来のDaily Menu併用版から更新する際はDaily Menuを外します。元のMod・プレイヤーの設定・セーブは自動変更しません。既存の膳識別子とAMJで使った餐台の読み取り口を残していますが、Daily Menuの全機能・実ユーザー旧セーブ全体の移行は未保証です。
 
-移管後のMO併用実ゲーム確認：[結果と前提](Docs/ExtractionValidation.md)。単独構成・実ユーザー旧セーブ・1.7は未検証。
+Dining implements its own storage-backed serving, portions, meal records and vanilla assisted-feeding integration. Only Harmony is required. No Daily Menu code, DLL or artwork is distributed. Food mods own recipes and role assignments; Culture is categorization only.
+
+See [design/build/validation](Docs/Design.md). Historical evidence in [ExtractionValidation](Docs/ExtractionValidation.md) predates dependency removal. No Steam publication is implied.
+
+Current dependency-removal runtime evidence: [2026-10-31 acceptance](Docs/IndependentValidation.md).

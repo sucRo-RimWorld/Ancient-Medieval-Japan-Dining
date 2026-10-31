@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<AMJD_ServingTable.label>配膳台</AMJD_ServingTable.label>
+<AMJD_ServingTable.description>選んだ料理を一種類備蓄する台。運搬担当者が補充し、食事時に必要な分を膳へ取り分ける。台の「料理を選ぶ」から料理を指定する。</AMJD_ServingTable.description>
+</LanguageData>
