@@ -1,25 +1,16 @@
-# Ancient & Medieval Japan - Dining
+# Ancient & Medieval Japan — Dining（新設計検討中）
 
-主食・汁・副菜を備蓄から取り分け、一つの膳で食べる独立Modです。Culture系カテゴリですがCulture本体は不要です。
+**2026-11-01: 旧Diningの設計を全面廃止し、新料理システム案へ切り替える決定。**
 
-RimWorld 1.6とHarmonyが必要です。**Daily Menuは不要で、同時使用は非対応です。** Agriculture・MOもDining自体の必須依存ではありません。料理と役割指定はAgricultureなどの食料Modが提供します。
+- **新設計正本:** [Docs/Design.md](Docs/Design.md)
+- 新案では一品完結の料理をT1〜T5の5段階で調理し、食材を主食・汁の具・汁の味付け・副菜・主菜・調味の枠へ割り当てる。段階・材料の点数帯・加工度・漬物等の条件は設計書を参照。
+- **旧配膳台・複数の完成料理を一膳へ取り分ける旧方式は廃止決定**。旧方式の単なる拡張ではない。
+- 料理Bill・食材/加工品と探索ロジックは現時点の作者指定ではAgriculture側で担当。独立したDiningの実行Modを残すかは未決定。
 
-## 使い方
+## 実装状態について
 
-1. 配膳台を建て、「料理を選ぶ」から供する料理を指定する。
-2. 通常の作業指示で料理を作り置きする。運搬担当者が配膳台へ補充する。
-3. 空腹時に主食と、用意できる汁・副菜を一膳にまとめて食べる。病人等への給餌にも接続する。
+**現在リポジトリにあるC#・XML・DLL・Aboutの表示はまだ旧Dining実装である。** 今回は新方針を設計として確定しただけで、実装差し替え・ビルド・削除・セーブ互換作業・ゲーム検証は行っていない。
 
-食べ残し、中断、材料・腐敗の引継ぎに対応します。朝昼晩の献立や自動調理計画は不要です。対応する主食がない場合は通常の食事経路を維持します。
+以前のDaily Menu非依存化実装、旧データ/テスト/検証書は**旧システムの履歴資料**として残っている。2026-10-31の[旧方式の受入テスト](Docs/IndependentValidation.md)は新設計への適合を証明しない。旧コードの撤去とAgricultureとの移行は別の作業である。
 
-膳に料理画像を置く編集UI、主菜・添え物の独立枠、盛り付けと品数の新しい評価は後続作業です。既存の暫定数値は最終バランスではありません。
-
-## 更新と開発
-
-Harmony → Dining → Agricultureの順で有効化してください。従来のDaily Menu併用版から更新する際はDaily Menuを外します。元のMod・プレイヤーの設定・セーブは自動変更しません。既存の膳識別子とAMJで使った餐台の読み取り口を残していますが、Daily Menuの全機能・実ユーザー旧セーブ全体の移行は未保証です。
-
-Dining implements its own storage-backed serving, portions, meal records and vanilla assisted-feeding integration. Only Harmony is required. No Daily Menu code, DLL or artwork is distributed. Food mods own recipes and role assignments; Culture is categorization only.
-
-See [design/build/validation](Docs/Design.md). Historical evidence in [ExtractionValidation](Docs/ExtractionValidation.md) predates dependency removal. No Steam publication is implied.
-
-Current dependency-removal runtime evidence: [2026-10-31 acceptance](Docs/IndependentValidation.md).
+次の設計課題は**U1（食材分類）**。作者が「反映して」と指示するまで検討内容を設計書へ逐次書き込まない。

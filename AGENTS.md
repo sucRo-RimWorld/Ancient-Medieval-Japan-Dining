@@ -1,7 +1,17 @@
-# AMJ Dining
+# AMJ Dining — agent instructions (new design from 2026-11-01)
 
-Read `Docs/Design.md`, `Docs/Coordination.md`, and Project's current `AGENTS.md` / `Docs/SharedRules.md` before work. Use topic branches and PR integration with exact-head substantive review as required by Project `Docs/GitHubMainProtection.md`.
+## Start here
+1. Read this file and `main:Docs/Coordination.md`, then the current `Docs/Design.md`.
+2. Read Project `AGENTS.md`, `Docs/Coordination.md`, `Docs/SharedRules.md` and the applicable PR protection rules.
+3. Work through topic branches and PRs; substantive exact-head PR review before merge.
 
-Dining owns role-based meal assembly, serving, ingestion and meal UI. Culture is a category, never an implied dependency. Agriculture owns foods, recipes and their role assignments. Do not embed Agriculture/MO requirements in Dining.
+## New author decision (supersedes ALL prior Dining design)
+`Docs/Design.md` is the **new, author-decided single-item meal proposal**. The old tray/serving-table/multi-prepared-dish assembly approach and its design decisions are **cancelled**, including its planned role expansions and graphical layout. Do not reintroduce prior Dining behaviors on the assumption they are still accepted.
 
-This extraction preserves the legacy assembly/type/Def identities deliberately. Only Dining distributes AMJAgriculture.Dining.dll. Daily Menu is no longer required. Do not reintroduce its assembly references or redistribute its decompiled code. The DailyMenu.Buffet name in ServingTable.cs is a save-name adapter, not an external dependency. Build using `Scripts/Build.ps1`; validate the paired migration with `python Tests/validate_migration.py --agriculture PATH`. No automatic game launches or Steam publication. Use Docs/IndependentValidation.md for current dependency-removal evidence and its limits; earlier extraction evidence is historical.
+**Critical separation:** current C#/Defs/DLL/About/README historical descriptions and 2026-10-31 runtime evidence still describe the **legacy implementation, not the new design**. Do not claim the new design is implemented or tested. Preserve historical evidence until migration decisions are authorized; do not ship obsolete runtime as if it implements the new plan.
+
+Current new proposal assigns food/ingredient role classification, all five recipe Bills, ingredient selection and meal product behavior to **Agriculture**. Whether there remains an independent Dining runtime Mod is **undecided**; do not invent a required Dining dependency or recycle the legacy DLL by default. Coordination with Agriculture/Project must use the relevant owner `main:Docs/Coordination.md`, never the user as courier. Historical dependencies (Daily Menu, MO, Harmony, etc.) do not determine new-plan dependencies.
+
+Do **not** implement C#/XML, remove legacy artifacts, change package IDs, modify saves or launch tests from the design-only request. Preserve historical source for controlled retirement when the new design and migration are ready. Author requested new design document edits only when explicitly asked to **「反映して」**; U1 discussion is chat-only until then.
+
+For material source work, check the applicable existing-Mod audit gate; use minimal justified verification, no automatic native launches or Steam publishing.
