@@ -8,7 +8,7 @@
 
 **Current repository state:** The existing C#/XML/DLL/About files are the **old 2026-10-31 serving system**. No old runtime source, DLL, Def, recipes, save format, publishing metadata or player data were changed by the design-only PR. Old extraction and independent native PASS remain valid strictly for their historical source, not for the new proposal. No new runtime acceptance. Old `Docs/IndependentValidation.md` and related source/evidence are retained as history only; do not imply they passed the new system.
 
-**Next:** U1 food-role classification based on actual Agriculture and Vanilla food/processing Defs, multi-role ingredients and representative T2/T3/T4/T5 point combinations. Keep discussion in chat; change design only upon author request to **「反映して」**.
+**Next:** U1 basic classification is decided. T1-only conditional names, T2–T5 fixed names, score-to-recreation reward, and meal-stacking equality have been confirmed in the owner design. Next open design questions include U3/U6 ingredient quantities and nutrition and U4 recreation/mood coefficient balance. Record **author-confirmed** decisions in owner `Docs/Design.md`; do not write unconfirmed proposals into the canonical design. Implementation and migration remain OPEN.
 
 ## Legacy state — superseded (2026-10-31)
 
